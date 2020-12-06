@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
-    public float xMouse;
-    public float yMouse;
+    public Camera cam;
 
     Vector2 movement;
+    Vector2 mousePos;
 
     void Start()
     {
@@ -24,35 +24,19 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-        {
-            moveSpeed += 10;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-        {
-            moveSpeed -= 10;
-        }
-
-        //Look at mouse
-        FaceMouse();
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
     }
 
     void FixedUpdate()
     {
-        //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        Vector2 lookDir = mousePos - rb.position;
+
+        float angle = Mathf.Atan2(lookDir.y ,lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        rb.rotation = angle;
     }
 
-    void FaceMouse() 
-    {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-
-        xMouse = direction.x;
-        yMouse = direction.y;
-        transform.up = direction;
-    }
 }
