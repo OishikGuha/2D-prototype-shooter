@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
 
     public static int damage;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+//        Instantiate(player);
     }
 
     // Update is called once per frame

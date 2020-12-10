@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     public Bullet bullet;
 
+    public GameObject dieEffect;
+
     private void Start()
     {
         damage = bullet.bulletDamage;
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     void Die() 
     {
+        Instantiate(dieEffect);
         Destroy(gameObject);
     }
 

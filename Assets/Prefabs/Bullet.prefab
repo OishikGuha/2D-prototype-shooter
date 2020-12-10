@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8637423115832539371}
   - component: {fileID: 5885153017464391673}
   - component: {fileID: -6682655086183486721}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -146,3 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiteffect: {fileID: 8614586857721820172, guid: c9670f6b0c593a14597c074e472375c4,
     type: 3}
+  bulletDamage: 10
+  colliderComp: {fileID: 8637423115832539371}
+  playerCollider: {fileID: 1385377364486460082, guid: 0df0c8f16a2a68c4688e3c68923114e2,
+    type: 3}
+  player: {fileID: 1385377364486460092, guid: 0df0c8f16a2a68c4688e3c68923114e2, type: 3}
