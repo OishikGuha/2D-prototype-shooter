@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     public GameObject hiteffect;
 
+    public int bulletDamage = 10;
+
     private Shake shake;
 
     private void Start()
@@ -21,5 +23,6 @@ public class Bullet : MonoBehaviour
         Destroy(effect, 1f);
         Destroy(gameObject);
     }
+
 
 }

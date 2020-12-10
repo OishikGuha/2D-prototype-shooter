@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public int health = 100;
+
+    private static int damage;
+
+    public Bullet bullet;
+
+    private void Start()
     {
-        
+        damage = bullet.bulletDamage;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.collider.tag == "Bullet") 
+        {
+            Damage();
+        }
+     }
+
+    void Damage() 
+    {
+        health -= damage;
+
+        if (health <= damage) 
+        {
+            Die();
+        }
+
     }
+
+    void Die() 
+    {
+        Destroy(gameObject);
+    }
+
 }
