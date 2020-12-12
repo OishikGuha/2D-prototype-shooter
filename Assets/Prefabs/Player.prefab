@@ -44,7 +44,10 @@ GameObject:
   - component: {fileID: 1385377364486460082}
   - component: {fileID: 1385377364486460081}
   - component: {fileID: 1385377364486460080}
+  - component: {fileID: 82771656714640642}
   - component: {fileID: 1385377364486460083}
+  - component: {fileID: 3814273558022140967}
+  - component: {fileID: 6416986321223018783}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -196,6 +199,20 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3370402561850814333, guid: e1dcc3155020b794d8a4e66c33704776,
     type: 3}
   bulletForce: 20
+--- !u!114 &82771656714640642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385377364486460092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4d2dcd4bcb6994e8bb2eaa22f59086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animate: {fileID: 0}
+  health: 100
 --- !u!58 &1385377364486460083
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -212,3 +229,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!95 &3814273558022140967
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385377364486460092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59b96d9e55409b441a891c245f00e247, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6416986321223018783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385377364486460092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4d2dcd4bcb6994e8bb2eaa22f59086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animate: {fileID: 3814273558022140967}
+  health: 0
